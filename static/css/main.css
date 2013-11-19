@@ -1,0 +1,121 @@
+body {
+    font-family: 'Alegreya', serif;
+    font-size: 2em;
+    color: #333333;
+    background-color: #FFFFFF;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Neuton', sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.06em;
+    line-height: 1.1em;
+    word-spacing: 0.25em;
+    margin: 15px 0 5px 0;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3 {
+    font-size: 2em;
+}
+h4 {
+    font-size: 1.5em;
+}
+
+a:hover, a.focus {
+    text-decoration: none;
+}
+
+.header {
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 20px;
+    padding: 0px;
+}
+
+/*
+.header a {
+    text-decoration: none;
+}
+*/
+
+.header h1 {
+    font-size: 5em;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.article {
+   margin-top: 25px;
+   margin-bottom: 25px;
+}
+
+.info-article {
+    margin-top: 3px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.entry-content {
+    text-align: justify;
+}
+
+.entry-content p {
+    margin-bottom: 10px;
+}
+
+abbr, address {
+    display: inline;
+}
+
+span.tag-list {
+    margin-left: 30px;
+    display: inline-block;
+}
+span.tag {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+/* Make a not responsive pre, shows scrollbar when small */
+div.highlight pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+}
+
+/* Inset, by Dan Eden */
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* For align center */
+.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.current a {
+    color: #666
+}
+
+.sidebar {
+    background-color: #172E50;
+    color: #FFFFFF;
+    height: 100%;
+}

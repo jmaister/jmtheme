@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        {% block head %}
+        <title>{{ SITENAME }} - {% block title %}Home{% endblock title %}</title>
+        <meta charset="utf-8" />
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+        {% endif %}
+        {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_ATOM and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_RSS and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+        {% endif %}
+        {% if TAG_FEED_ATOM and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+        {% endif %}
+        {% if TAG_FEED_RSS and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+        {% endif %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.1/flatly/bootstrap.min.css" rel="stylesheet">
+        <!--
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
+        -->
+
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css" />
+        
+        
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/foundation-icons/foundation-icons.css" />
+        <style>
+        .large{ font-size: 50px; line-height: 50px; }
+        .medium { font-size: 30px; padding: 0 5px; }
+        .small { font-size: 15px; padding: 0 5px; }
+
+        address {
+            display: inline;
+        }
+        
+        .info-margin {
+            margin-left: 10px;
+        }
+        .info-tag {
+            margin-left: 5px;
+            display: inline-block;
+        }
+        .jumbotron {
+            margin-top: 80px;
+        }
+        .title * {
+            font-size: 45px;
+            color: #FFFFFF;
+        }
+        h1, h2, h3, h4, h5, .title {
+            font-family: "Crete Round","Georgia",serif;
+        }
+        
+        </style>
+        
+        
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+<!--
+		<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
+-->		
+
+        {% endblock head %}
+</head>
+
+<body id="index">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        
+      <li class="{% if page_name == 'index' %}active{% endif %}"><a href="{{ SITEURL }}"><i class="fi-home small"></i> Blog</a> </li>
+      
+      {% if DISPLAY_PAGES_ON_MENU %}
+        {% for p in PAGES %}
+          <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}"><i class="fi-{{p.icon}} small"></i> {{ p.title }}</a></li>
+        {% endfor %}
+      {% endif %}
+      
+      <li class="{% if page_name == 'archives' %}active{% endif %}"><a href="{{ SITEURL }}/archives.html"><i class="fi-folder"></i> Archive</a></li>
+      <li class="{% if page_name == 'tags' %}active{% endif %}"><a href="{{ SITEURL }}/tags.html"><i class="fi-flag"></i> Tags</a> </li>
+      <li><a href="{{ SITEURL }}/{{ FEED_RSS }}"><i class="fi-rss"></i> RSS</a> </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+                    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1> <small>{{ SITESUBTITLE }}</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <!-- social -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Social</div>
+                        <ul class="list-group">
+                            {% for name, link in SOCIAL %}
+                            <li class="list-group-item">
+                                <a href="{{ link }}" target="_blank"><i class="fi-social-{{ name }} medium"></i> {{ name }}</a>
+                            </li>
+                            {% endfor %}
+                            {% if EMAIL %}
+                            <li class="list-group-item">
+                                <a href="mailto:{{ EMAIL }}" target="_blank"><i class="fi-mail medium"></i> e-Mail</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!-- social -->
+                    
+                    <!-- categories -->
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Categories</div>
+                        <ul class="list-group">
+                            {% for cat, null in categories %}
+                              <li class="list-group-item {% if cat == category %}active{% endif %}">
+                                  <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fi-folder medium"></i> {{ cat }}</a>
+                              </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <!-- categories -->
+                </div>
+
+                <div class="col-sm-9">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+                
+        
+        <footer id="footer">
+                <hr/>
+                <address id="about" class="vcard body">
+                &copy; Jordi Burgos. 2013.
+                </address>
+        </footer>
+		
+        <!--Add statistycs-->
+        {% include 'analytics.html' %}
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    -->
+</body>
+</html>

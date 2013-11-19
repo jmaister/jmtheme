@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block content %}
+<section id="content" class="body">
+    <div class="panel panel-primary">
+        <div class="panel-heading title">
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+        </div>
+        <div class="panel-body">
+            <div style="margin-bottom: 5px;">
+            {% include 'article_info.html' %}
+            </div>
+            <div style="display: flex;">
+                <span> {% include 'twitter.html' %} </span>
+                <span> {% include 'facebook.html' %} </span>
+                <span> {% include 'googleplus.html' %} </span>
+                <span> {% include 'reddit.html' %} </span>
+                <span> {% include 'github.html' %} </span>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            {{ article.content }}
+
+        </div>
+    </div>
+    <hr/>
+    {% include 'disqus.html' %}
+</section>
+{% endblock %}

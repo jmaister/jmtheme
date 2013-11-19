@@ -1,0 +1,17 @@
+
+{% if article.author %}<address class="vcard author"><a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></address>{% endif %}
+<span class="info-margin">
+on <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
+</span>
+
+{% if article.category %}
+<span class="info-margin">
+    <a class="url" href="{{ SITEURL }}/{{ article.category.url }}"><i class="fi-folder small"></i> {{ article.category }}</a>
+</span>
+{% endif %}
+
+<span class="info-margin">
+{% for tag in article.tags|sort %}
+    <span class="info-tag"><a href="{{ SITEURL }}/{{tag.url}}"><i class="fi-flag small"></i> {{tag}}</a></span>
+{% endfor %}
+</span>

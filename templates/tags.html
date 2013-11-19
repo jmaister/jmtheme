@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+<h1>Articles by tag</h1>
+
+<dl>
+{% for tag, articles in tags %}
+    <dt>{{ tag }}</dt>
+    {% for article in articles %}
+        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
+{% endfor %}
+</dl>
+{% endblock %}
