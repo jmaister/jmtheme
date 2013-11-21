@@ -3,7 +3,7 @@
 {% block content %}
 <section id="content">
 
-{% for article in articles_page.object_list|sort %}
+{% for article in articles_page.object_list|sort(attribute='date', reverse=True) %}
     <div class="panel panel-primary">
         <div class="panel-heading title">
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
