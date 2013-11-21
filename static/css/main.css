@@ -1,121 +1,53 @@
+/* fonts */
 body {
-    font-family: 'Alegreya', serif;
-    font-size: 2em;
-    color: #333333;
-    background-color: #FFFFFF;
-    line-height: 1.5;
+    font-size: 18px;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Neuton', sans-serif;
-    font-weight: normal;
-    letter-spacing: -0.06em;
-    line-height: 1.1em;
-    word-spacing: 0.25em;
-    margin: 15px 0 5px 0;
+.title * {
+    font-size: 45px;
+    color: #FFFFFF;
 }
-h1 {
-    font-size: 3em;
-}
-h2 {
-    font-size: 2.5em;
-}
-h3 {
-    font-size: 2em;
-}
-h4 {
-    font-size: 1.5em;
+h1, h2, h3, h4, h5, .title {
+    font-family: "Crete Round", "Georgia", serif;
 }
 
-a:hover, a.focus {
-    text-decoration: none;
+/* fix top bar */
+.jumbotron {
+    margin-top: 80px;
 }
 
-.header {
-    text-align: center;
-    margin: 0px;
-    margin-bottom: 20px;
-    padding: 0px;
+/* for the icons */
+.large {
+    font-size: 50px;
+    line-height: 50px;
+}
+.medium {
+    font-size: 30px;
+    padding: 0 5px;
+}
+.small {
+    font-size: 15px;
+    padding: 0 5px;
 }
 
-/*
-.header a {
-    text-decoration: none;
-}
-*/
+/* article */
 
-.header h1 {
-    font-size: 5em;
-}
-
-footer {
-    margin-top: 20px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.article {
-   margin-top: 25px;
-   margin-bottom: 25px;
-}
-
-.info-article {
-    margin-top: 3px;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.entry-content {
-    text-align: justify;
-}
-
-.entry-content p {
-    margin-bottom: 10px;
-}
-
-abbr, address {
+address {
     display: inline;
 }
 
-span.tag-list {
-    margin-left: 30px;
-    display: inline-block;
-}
-span.tag {
+.info-margin {
     margin-left: 10px;
+}
+.info-tag {
+    margin-left: 5px;
     display: inline-block;
 }
-
-/* Make a not responsive pre, shows scrollbar when small */
-div.highlight pre {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: pre;
-    word-wrap: normal;
-    word-break: normal;
+.center {
+    text-align: center;
 }
 
-/* Inset, by Dan Eden */
-hr {
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* For align center */
-.align-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.current a {
-    color: #666
-}
-
-.sidebar {
-    background-color: #172E50;
-    color: #FFFFFF;
-    height: 100%;
+div.highlight {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
