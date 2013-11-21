@@ -7,8 +7,8 @@
             <a href="{{ SITEURL }}/{{ page.url }}" rel="bookmark" title="Permalink to {{ page.title|striptags }}">{{ page.title }}</a>
         </div>
         <div class="panel-body">
-        {% import 'translations.html' as translations with context %}
-        {{ translations.translations_for(page) }}
+            {% import 'translations.html' as translations with context %}
+            {{ translations.translations_for(page) }}
 
             {{ page.content }}
 
