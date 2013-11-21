@@ -10,9 +10,9 @@
         </div>
         <div class="panel-body">
             <div style="margin-bottom: 5px;">
-            {% include 'article_info.html' %}
+                {% include 'article_info.html' %}
             </div>
-            <div style="display: flex;">
+            <div style="display: inline;">
                 <span> {% include 'twitter.html' %} </span>
                 <span> {% include 'facebook.html' %} </span>
                 <span> {% include 'googleplus.html' %} </span>
@@ -20,6 +20,7 @@
                 <span> {% include 'github.html' %} </span>
             </div>
         </div>
+        <hr/>
         <div class="panel-body">
 
             {{ article.content }}
