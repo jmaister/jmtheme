@@ -1,0 +1,6 @@
+{% for name, link in SOCIAL %}
+    <a href="{{ link }}" title="{{ name }}" target="_blank"><i class="fi-social-{{ name }} large"></i></a>
+{% endfor %}
+{% if EMAIL %}
+    <a href="mailto:{{ EMAIL }}"  title="e-Mail" target="_blank"><i class="fi-mail large"></i></a>
+{% endif %}

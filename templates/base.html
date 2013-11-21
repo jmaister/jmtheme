@@ -91,55 +91,50 @@
         <div class="container">
             <div class="row">
                 <div class="jumbotron">
-                    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1> <small>{{ SITESUBTITLE }}</small>
+                    <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <small>{{ SITESUBTITLE }}</small>
+                        </div>
+                        <div class="col-sm-6">
+                            {% include 'socialicons.html' %}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
-                    <!-- social -->
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">Social</div>
-                        <ul class="list-group">
-                            {% for name, link in SOCIAL %}
-                            <li class="list-group-item">
-                                <a href="{{ link }}" target="_blank"><i class="fi-social-{{ name }} medium"></i> {{ name }}</a>
-                            </li>
-                            {% endfor %}
-                            {% if EMAIL %}
-                            <li class="list-group-item">
-                                <a href="mailto:{{ EMAIL }}" target="_blank"><i class="fi-mail medium"></i> e-Mail</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                    <!-- social -->
-                    
-                    <!-- categories -->
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">Categories</div>
-                        <ul class="list-group">
-                            {% for cat, null in categories %}
-                              <li class="list-group-item {% if cat == category %}active{% endif %}">
-                                  <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fi-folder medium"></i> {{ cat }}</a>
-                              </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <!-- categories -->
-                </div>
-
-                <div class="col-sm-9">
                 {% block content %}
                 {% endblock %}
-                </div>
             </div>
         </div>
                 
         
-        <footer id="footer">
+        <footer id="footer" class="navbar-default">
                 <hr/>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul class="list-group">
+                            <li class="list-group-item">&copy; Jordi Burgos. 2013.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <!-- categories -->
+                            <ul class="list-group">
+                                <li class="list-group-item">Categories</li>
+                                {% for cat, null in categories %}
+                                  <li class="list-group-item {% if cat == category %}active{% endif %}">
+                                      <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fi-folder medium"></i> {{ cat }}</a>
+                                  </li>
+                                {% endfor %}
+                            </ul>
+                        <!-- categories -->
+                    </div>
+                    <div class="col-sm-4">
+                        {% include 'socialicons.html' %}
+                    </div>
+                </div>
                 <address id="about" class="vcard body">
-                &copy; Jordi Burgos. 2013.
+                
                 </address>
         </footer>
 		
