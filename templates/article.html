@@ -9,10 +9,10 @@
             <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
         </div>
         <div class="panel-body">
-            <div style="margin-bottom: 5px;">
+            <div>
                 {% include 'article_info.html' %}
             </div>
-            <div style="display: inline;">
+            <div class="socialbar">
                 <span> {% include 'twitter.html' %} </span>
                 <span> {% include 'facebook.html' %} </span>
                 <span> {% include 'googleplus.html' %} </span>
