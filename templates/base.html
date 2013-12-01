@@ -110,24 +110,24 @@
         <footer id="footer" class="navbar-default">
                 <hr/>
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3 col-sm-offset-1">
                         <ul class="list-group">
                             <li class="list-group-item">&copy; Jordi Burgos. 2013.</li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <!-- categories -->
-                            <ul class="list-group">
-                                <li class="list-group-item">Categories</li>
-                                {% for cat, null in categories %}
-                                  <li class="list-group-item {% if cat == category %}active{% endif %}">
-                                      <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fi-folder medium"></i> {{ cat }}</a>
-                                  </li>
-                                {% endfor %}
-                            </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item">Categories</li>
+                            {% for cat, null in categories %}
+                              <li class="list-group-item {% if cat == category %}active{% endif %}">
+                                  <a href="{{ SITEURL }}/{{ cat.url }}"><i class="fi-folder medium"></i> {{ cat }}</a>
+                              </li>
+                            {% endfor %}
+                        </ul>
                         <!-- categories -->
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         {% include 'socialicons.html' %}
                     </div>
                 </div>

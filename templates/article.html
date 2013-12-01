@@ -12,19 +12,20 @@
             <div>
                 {% include 'article_info.html' %}
             </div>
-            <div class="socialbar">
-                <span> {% include 'twitter.html' %} </span>
-                <span> {% include 'facebook.html' %} </span>
-                <span> {% include 'googleplus.html' %} </span>
-                <span> {% include 'reddit.html' %} </span>
-                <span> {% include 'github.html' %} </span>
-            </div>
         </div>
-        <hr/>
         <div class="panel-body">
 
             {{ article.content }}
 
+        </div>
+        <hr/>
+        <div class="panel-body socialbar">
+            <p>Probably, you want to share this article:</p>
+            <div> {% include 'twitter.html' %} </div>
+            <div> {% include 'reddit.html' %} </div>
+            <div> {% include 'facebook.html' %} </div>
+            <div> {% include 'googleplus.html' %} </div>
+            <div> {% include 'github.html' %} </div>
         </div>
     </div>
     <hr/>

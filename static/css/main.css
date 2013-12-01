@@ -7,7 +7,7 @@ body {
     font-size: 45px;
     color: #FFFFFF;
 }
-h1, h2, h3, h4, h5, .title {
+h1, h2, h3, h4, h5, .title, .navbar-brand {
     font-family: "Crete Round", "Georgia", serif;
 }
 
@@ -53,11 +53,7 @@ div.highlight {
     margin-bottom: 20px;
 }
 
-.g-plusone {
-    margin-left: 15px;
-}
-
+/* social */
 .socialbar {
-    display: inline;
-    margin-top: 5px;
+    margin-left: 20px;
 }
