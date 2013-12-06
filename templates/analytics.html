@@ -10,6 +10,12 @@
 </script>
 {% endif %}
 
+<!-- SEO: G+ connection -->
+{% if GOOGLE_PLUS_ID %}
+<a style="display: none;" href="https://plus.google.com/{{GOOGLE_PLUS_ID}}?rel=author">Google+</a>    
+{% endif %}
+
+
 {% if GOSQUARED_SITENAME %}
 <script type="text/javascript">
   var GoSquared = {};

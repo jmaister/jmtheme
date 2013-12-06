@@ -1,27 +1,37 @@
 <!-- https://developers.google.com/custom-search/docs/structured_data?hl=es&csw=1#microformats -->
 <!--
 <PageMap>
-<DataObject type="document">
 {% if article %}
-<Attribute name="title">{{article.title|striptags}}</Attribute>
-<Attribute name="author">{{ article.author }}</Attribute>
-<Attribute name="description">{{ article.summary|striptags }}</Attribute>
-<Attribute name="page_count">1</Attribute>
-<Attribute name="rating">5</Attribute>
-<Attribute name="last_update">{{ article.date.isoformat() }}</Attribute>
+<DataObject type="document">
+    <Attribute name="title">{{article.title|striptags}}</Attribute>
+    <Attribute name="author">{{ article.author }}</Attribute>
+    <Attribute name="description">{{ article.summary|striptags }}</Attribute>
+    <Attribute name="page_count">1</Attribute>
+    <Attribute name="rating">5</Attribute>
+    <Attribute name="last_update">{{ article.date.isoformat() }}</Attribute>
+</DataObject>
+<DataObject type="metatags">
+    <Attribute name="category" value="{{ article.category }}"/>
+    {% for tag in article.tags %}
+        <Attribute name="category" value="{{tag}}"/>
+    {% endfor %}
+</DataObject>
 {% else %}
+<DataObject type="document">
 <Attribute name="title">Homepage</Attribute>
 <Attribute name="author">{{ AUTHOR }}</Attribute>
 <Attribute name="description">{{ SITESUBTITLE }}</Attribute>
 <Attribute name="page_count">1</Attribute>
 <Attribute name="rating">5</Attribute>
 <Attribute name="last_update">{{ CURRENT_DATE }}</Attribute>
-{% endif %}
 </DataObject>
+{% endif %}
+
 <DataObject type="thumbnail">
 <Attribute name="src" value="{{GRAVATAR_IMAGE}}" />
 <Attribute name="width" value="300" />
 <Attribute name="height" value="300" />
 </DataObject>
 </PageMap>
+
 -->

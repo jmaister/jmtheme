@@ -65,3 +65,10 @@ div.highlight {
 .none {
     display: none;
 }
+
+.vcard * {
+    display: none;
+}
+.vcard .name {
+    display: inline;
+}

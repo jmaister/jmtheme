@@ -1,15 +1,21 @@
 
 {% if article.author %}
-By <address class="vcard author">
-    <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-    <span class="none">
-        <span class="title">Senior editor</span>
-        <span class="org none">jordiburgos.com</span>
-        <span class="adr">
-          <span class="locality">Valencia</span>
-       </span>
-   </span>
-</address>
+By <span>
+    <!-- SEO: vcard -->
+    <address id="hcard-Jordi-Burgos" class="vcard author">
+        <a class="name" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+        <a class="fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+        <img src="{{ SITEURL }}/images/gravatar300.jpeg" alt="photo of " class="photo"/>
+        <span class="title">Software Engineer</span>
+        <span class="org">jordiburgos.com</span>
+        <a class="url" href="http://jordiburgos.com">jordiburgos.com</a>
+        <a class="email" href="mailto:jordiburgos@gmail.com">jordiburgos@gmail.com</a>
+        <span class="address">
+            <span class="region">Valencia</span>
+            <span class="country-name">Spain</span>
+        </span>
+    </address>
+</span>
 {% endif %}
 <span>
  on <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
