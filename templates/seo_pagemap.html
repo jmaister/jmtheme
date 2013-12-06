@@ -1,0 +1,20 @@
+{% if article %}
+<!-- https://developers.google.com/custom-search/docs/structured_data?hl=es&csw=1#microformats -->
+<!--
+<PageMap>
+<DataObject type="document">
+<Attribute name="title">{{article.title|striptags}}</Attribute>
+<Attribute name="author">{{ article.author }}</Attribute>
+<Attribute name="description">{{ article.summary|striptags }}</Attribute>
+<Attribute name="page_count">1</Attribute>
+<Attribute name="rating">5</Attribute>
+<Attribute name="last_update">{{ article.date.isoformat() }}</Attribute>
+</DataObject>
+<DataObject type="thumbnail">
+<Attribute name="src" value="{{GRAVATAR_IMAGE}}" />
+<Attribute name="width" value="300" />
+<Attribute name="height" value="300" />
+</DataObject>
+</PageMap>
+-->
+{% endif %}
