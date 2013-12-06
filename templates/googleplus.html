@@ -1,16 +1,5 @@
 <!-- Place this tag where you want the +1 button to render. -->
 <div class="g-plusone"></div>
-
-<!-- Place this tag where you want the widget to render. -->
-<!--
-<div class="g-person" data-href="//plus.google.com/105036003303074734569" data-layout="landscape" data-rel="author"></div>
--->
-
-<!-- Place this tag where you want the widget to render. -->
-<!--
-<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/105036003303074734569" data-rel="author"></div>
--->
-
 <!-- Place this tag after the last +1 button tag. -->
 <script type="text/javascript">
   (function() {
@@ -19,3 +8,8 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
+
+<!-- G+ connection -->
+{% if GOOGLE_PLUS_ID %}
+<a style="display: none;" href="https://plus.google.com/{{GOOGLE_PLUS_ID}}?rel=author">Google+</a>    
+{% endif %}
