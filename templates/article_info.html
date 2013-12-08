@@ -23,13 +23,13 @@ By <span>
 
 {% if article.category %}
 <span class="info-margin">
-    <a class="url" href="{{ SITEURL }}/{{ article.category.url }}"><i class="fi-folder small"></i> {{ article.category }}</a>
+    <a class="url" href="{{ SITEURL }}/{{ article.category.url }}" rel="tag"><i class="fi-folder small"></i> {{ article.category }}</a>
 </span>
 {% endif %}
 
 <span class="info-margin">
 {% for tag in article.tags|sort %}
-    <span class="info-tag"><a href="{{ SITEURL }}/{{tag.url}}"><i class="fi-flag small"></i> {{tag}}</a></span>
+    <span class="info-tag"><a href="{{ SITEURL }}/{{tag.url}}" rel="tag"><i class="fi-flag small"></i> {{tag}}</a></span>
 {% endfor %}
 </span>
 
