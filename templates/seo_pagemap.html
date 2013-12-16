@@ -27,11 +27,13 @@
 </DataObject>
 {% endif %}
 
+{% if GRAVATAR_IMAGE %}
 <DataObject type="thumbnail">
 <Attribute name="src" value="{{GRAVATAR_IMAGE}}" />
 <Attribute name="width" value="300" />
 <Attribute name="height" value="300" />
 </DataObject>
 </PageMap>
+{% endif %}
 
 -->
