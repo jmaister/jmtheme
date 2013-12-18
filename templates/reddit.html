@@ -1,5 +1,7 @@
+{% if REDDIT_USERNAME %}
 <script type="text/javascript">
 reddit_url='{{ SITEURL }}/{{ article.url }}';
 reddit_title='{{ article.title|striptags }}';
 </script>
 <script type="text/javascript" src="http://reddit.com/static/button/button1.js"></script>
+{% endif %}
