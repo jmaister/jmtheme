@@ -4,7 +4,7 @@
     var disqus_shortname = '{{ DISQUS_SITENAME }}'; 
     var disqus_identifier = '{{ article.slug }}'; // 'a unique identifier for each page where Disqus is present';
     var disqus_title =  "Comments on '{{ article.title|striptags }}'"; // 'a unique title for each page where Disqus is present';
-    //var disqus_url = "{{ SITEURL }}/{{ article.url }}"; //'a unique URL for each page where Disqus is present';
+    var disqus_url = "{{ SITEURL }}/{{ article.url }}"; //'a unique URL for each page where Disqus is present';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
