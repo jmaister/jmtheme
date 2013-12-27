@@ -1,15 +1,15 @@
 {% if DISQUS_SITENAME and DISQUS_ID_SUFFIX %}
-<div id="disqus_thread">
-</div>
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = '{{ DISQUS_SITENAME }}'; 
+    var disqus_shortname = '{{ DISQUS_SITENAME }}'; // required: replace example with your forum shortname
     var disqus_identifier = '{{ article.slug }}{{DISQUS_ID_SUFFIX}}'; // 'a unique identifier for each page where Disqus is present';
     var disqus_title =  "Comments on '{{ article.title|striptags }}'"; // 'a unique title for each page where Disqus is present';
     var disqus_url = "{{ SITEURL }}/{{ article.url }}"; //'a unique URL for each page where Disqus is present';
 
+    /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
