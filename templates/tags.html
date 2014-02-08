@@ -6,9 +6,9 @@
 <h1>Articles by tag</h1>
 
 <dl>
-{% for tag, articles in tags %}
+{% for tag, articles in tags|sort %}
     <dt>{{ tag }}</dt>
-    {% for article in articles %}
+    {% for article in articles|sort %}
         <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
     {% endfor %}
 {% endfor %}
