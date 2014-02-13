@@ -37,3 +37,7 @@ By <span>
     {% import 'translations.html' as translations with context %}
     {{ translations.translations_for(article) }}
 </span>
+
+{% if article.readtime %}
+<div><b>Read in {{article.readtime.minutes}} min.</b></div>
+{% endif %}
