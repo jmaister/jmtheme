@@ -52,6 +52,11 @@
 
 		<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/min.css" />
 
+        {% if GOOGLE_PLUS_ID %}
+            <!-- SEO: g+ -->
+            <link rel="author" href="https://plus.google.com/{{GOOGLE_PLUS_ID}}"/>
+   		{% endif %}		
+
         {% endblock head %}
 </head>
 
@@ -115,7 +120,24 @@
                 <div class="row">
                     <div class="col-sm-3 col-sm-offset-1">
                         <ul class="list-group">
-                            <li class="list-group-item">&copy; Jordi Burgos. 2013.</li>
+                            <li class="list-group-item">
+                            &copy;
+                            <!-- SEO: vcard --> 
+                            <address id="hcard-Jordi-Burgos" class="vcard author">
+                                <a class="name" href="{{ SITEURL }}/author/jordi-burgos.html" rel="canonical">{{AUTHOR}}</a>
+                                <a class="fn" href="{{ SITEURL }}/author/jordi-burgos.html" rel="canonical">{{AUTHOR}}</a>
+                                <img src="http://i.imgur.com/GoIhFqm.jpg" alt="photo of " class="photo"/>
+                                <span class="title">Software Engineer</span>
+                                <span class="org">jordiburgos.com</span>
+                                <a class="url" href="http://jordiburgos.com">jordiburgos.com</a>
+                                <a class="email" href="mailto:jordiburgos@gmail.com">jordiburgos@gmail.com</a>
+                                <span class="address">
+                                    <span class="region">Valencia</span>
+                                    <span class="country-name">Spain</span>
+                                </span>
+                            </address>
+                            2013.
+                            </li>
                         </ul>
                     </div>
                     <div class="col-sm-3">

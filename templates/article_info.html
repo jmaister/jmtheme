@@ -1,20 +1,7 @@
 
 {% if article.author %}
 By <span>
-    <!-- SEO: vcard -->
-    <address id="hcard-Jordi-Burgos" class="vcard author">
-        <a class="name" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-        <a class="fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-        <img src="{{ SITEURL }}/images/gravatar300.jpeg" alt="photo of " class="photo"/>
-        <span class="title">Software Engineer</span>
-        <span class="org">jordiburgos.com</span>
-        <a class="url" href="http://jordiburgos.com">jordiburgos.com</a>
-        <a class="email" href="mailto:jordiburgos@gmail.com">jordiburgos@gmail.com</a>
-        <span class="address">
-            <span class="region">Valencia</span>
-            <span class="country-name">Spain</span>
-        </span>
-    </address>
+    <address><a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></address>
 </span>
 {% endif %}
 <span>

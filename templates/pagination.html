@@ -1,8 +1,9 @@
 {% if DEFAULT_PAGINATION %}
 <ul class="pagination">
+        <!-- SEO: better indexing with rel="prev" and rel="next" -->
         {% if articles_page.has_previous() %}
                 {% set num = articles_page.previous_page_number() %}
-                <li class="prev"><a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html">&laquo;</a></li>
+                <li class="prev"><a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html" rel="prev">&laquo;</a></li>
         {% else %}
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
         {% endif %}
@@ -10,7 +11,7 @@
                 <li class="{{ 'active' if num == articles_page.number else '' }}"><a href="{{ SITEURL }}/{{ page_name }}{{ num if num > 1 else '' }}.html">{{ num }}</a></li>
         {% endfor %}
         {% if articles_page.has_next() %}
-                <li class="next"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">&raquo;</a></li>
+                <li class="next"><a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" rel="next">&raquo;</a></li>
         {% else %}
                 <li class="next disabled"><a href="#">&raquo;</a></li>
         {% endif %}
