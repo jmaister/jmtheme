@@ -3,7 +3,7 @@
 <script type="text/javascript">
     var disqus_shortname = '{{ DISQUS_SITENAME }}'; // required: replace example with your forum shortname
     var disqus_identifier = '{{ article.slug }}{{DISQUS_ID_SUFFIX}}'; // 'a unique identifier for each page where Disqus is present';
-    var disqus_title =  "Comments on '{{ article.title|striptags }}'"; // 'a unique title for each page where Disqus is present';
+    var disqus_title =  "Comments on '{{ article.title|striptags }}'{{DISQUS_ID_SUFFIX}}"; // 'a unique title for each page where Disqus is present';
     var disqus_url = "{{ SITEURL }}/{{ article.url }}"; //'a unique URL for each page where Disqus is present';
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
