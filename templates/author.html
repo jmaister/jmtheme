@@ -1,7 +1,15 @@
 {% extends "index.html" %}
 
 {% block title %}Articles by {{ author }}{% endblock %}
-{% block content_title %}
-<h2>Articles by {{ author }}</h2>
-{% endblock %}
 
+{% block content %}
+<h2>Articles by <span class="label label-primary">{{ author }}</span></h2>
+
+<dl>
+{% for article in dates %}
+    <dt>{{ article.locale_date }}</dt>
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+{% endfor %}
+</dl>
+
+{% endblock %}

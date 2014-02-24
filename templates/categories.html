@@ -3,9 +3,14 @@
 {% block title %}Categories{% endblock %}
 
 {% block content %}
-<ul>
-{% for category, articles in categories %}
-    <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+<h1>Categories</h1>
+
+<dl>
+{% for category, articles in categories|sort %}
+    <dt>{{ category }}</dt>
+    {% for article in articles|sort %}
+        <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
 {% endfor %}
-</ul>
+</dl>
 {% endblock %}

@@ -2,6 +2,13 @@
 
 {% block title %}Tag {{ tag }}{% endblock %}
 
-{% block content_title %}
-<h2>Articles in the <b>{{ tag }}</b> tag</h2>
+{% block content %}
+<h2>Articles in the <span class="label label-primary">{{ tag }}</span> tag</h2>
+
+<dl>
+{% for article in dates %}
+    <dt>{{ article.locale_date }}</dt>
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+{% endfor %}
+</dl>
 {% endblock %}
