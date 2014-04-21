@@ -1,0 +1,9 @@
+{% if INTENSEDEBATE_ACCOUNT %}
+<script>
+var idcomments_acct = '{{INTENSEDEBATE_ACCOUNT}}';
+var idcomments_post_id = '{{ article.slug }}';
+var idcomments_post_url; // = {{ SITEURL }}/{{ article.url }}
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+{% endif %}
