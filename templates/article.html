@@ -3,17 +3,17 @@
 {% block title %}{{article.title}}{% endblock %}
 
 {% block content %}
-<section id="content" class="body">
+<section id="content" class="body h-entry">
     <div class="panel panel-primary">
         <div class="panel-heading title">
-            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}" class="p-name u-url">{{ article.title }}</a>
         </div>
         <div class="panel-body">
             <div>
                 {% include 'article_info.html' %}
             </div>
         </div>
-        <div class="panel-body">
+        <div class="panel-body e-content">
 
             {{ article.content }}
 

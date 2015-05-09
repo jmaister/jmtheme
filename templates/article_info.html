@@ -1,20 +1,20 @@
 
 {% if article.author %}
-By <span><a href="{{ SITEURL }}/{{ article.author.url }}" rel="author">{{ article.author }}</a></span>
+By <span><a href="{{ SITEURL }}/{{ article.author.url }}" rel="author" class="author p-author">{{ article.author }}</a></span>
 {% endif %}
 <span>
- on <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
+ on <abbr class="published dt-published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
 </span>
 
 {% if article.category %}
 <span class="info-margin">
-    <a class="url" href="{{ SITEURL }}/{{ article.category.url }}" rel="tag"><i class="fi-folder small"></i> {{ article.category }}</a>
+    <a class="url p-category" href="{{ SITEURL }}/{{ article.category.url }}" rel="tag"><i class="fi-folder small"></i> {{ article.category }}</a>
 </span>
 {% endif %}
 
 <span class="info-margin">
 {% for tag in article.tags|sort %}
-    <span class="info-tag"><a href="{{ SITEURL }}/{{tag.url}}" rel="tag"><i class="fi-flag small"></i> {{tag}}</a></span>
+    <span class="info-tag p-category"><a href="{{ SITEURL }}/{{tag.url}}" rel="tag"><i class="fi-flag small"></i> {{tag}}</a></span>
 {% endfor %}
 </span>
 
